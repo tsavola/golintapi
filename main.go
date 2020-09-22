@@ -22,11 +22,12 @@ var lineRegexp = regexp.MustCompile(`^(.*):[0-9]+:[0-9]+:\s+(.*)`)
 var ignoredMessages = []*regexp.Regexp{
 	regexp.MustCompile(`^comment on `),
 	regexp.MustCompile(`^const [a-z_]`),
+	regexp.MustCompile(`^don't use underscores in Go names; [a-z]+ [a-z_]`),
 	regexp.MustCompile(`^exported [a-z]+ [A-Za-z0-9_.]+ should have comment `),
 	regexp.MustCompile(`^if block ends with a return statement, so drop this else and outdent its block`),
-	regexp.MustCompile(`^should replace [A-Za-z0-9_.]+ [+-]= `),
 	regexp.MustCompile(`^package comment should be of the form `),
 	regexp.MustCompile(`^receiver name [A-Za-z0-9_]+ should be consistent with previous receiver name `),
+	regexp.MustCompile(`^should replace [A-Za-z0-9_.]+ [+-]= `),
 }
 
 func main() {
