@@ -65,6 +65,9 @@ func main() {
 		if strings.HasPrefix(filename, "internal/") || strings.Contains(filename, "/internal/") {
 			continue
 		}
+		if strings.HasSuffix(filename, "_test.go") {
+			continue
+		}
 
 		var ignored bool
 
